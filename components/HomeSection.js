@@ -1,9 +1,10 @@
-const HomeSection = ({ tagline, title, children }) => {
+import homeSectionStyles from "@styles/components/HomeSection.module.scss";
+
+const HomeSection = ({ tagline, children }) => {
   return (
-    <div>
-      <h6>{tagline}</h6>
-      <h2>{title}</h2>
-      {children}
+    <div className={homeSectionStyles.sections}>
+      <p className={homeSectionStyles.taglines}>{tagline}</p>
+      <div className={homeSectionStyles.contents}>{children}</div>
     </div>
   );
 };
