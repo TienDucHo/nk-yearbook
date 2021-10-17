@@ -1,0 +1,27 @@
+@use "../variables.scss" as globalVar;
+@media (min-width: globalVar.$breakpoint-pc) {
+  .nav {
+    position: sticky;
+    z-index: 999;
+    margin: 0 2em;
+    padding: 1em 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .lists {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      .listItems {
+        margin: 0 0.5em;
+        .active {
+          color: #7898af;
+        }
+        :hover {
+          color: #7898af;
+        }
+      }
+    }
+  }
+}
