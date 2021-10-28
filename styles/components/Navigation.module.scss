@@ -1,26 +1,33 @@
-@use "../variables.scss" as globalVar;
-@media (min-width: globalVar.$breakpoint-pc) {
+@use "../variables.scss" as globalVars;
+@media (min-width: globalVars.$breakpoint-pc) {
   .nav {
-    //position: fixed;
+    font-size: globalVars.$header-footer;
     z-index: 999;
-    padding: 1em 0em;
+    padding: 1rem 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     .lists {
+      width: 80%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       list-style: none;
+      margin: 1rem 0 2rem 0;
+      padding: 0;
       .listItems {
-        margin: 0 0.5em;
-        .active {
-          color: #7898af;
-        }
+        color: globalVars.$primary-color;
+        font-weight: bold;
         :hover {
-          color: #7898af;
+          color: globalVars.$white;
         }
       }
+    }
+    .divider {
+      height: 2px;
+      width: 80%;
+      background-color: globalVars.$primary-color;
     }
   }
 }

@@ -1,6 +1,3 @@
-// Components
-import HomeSection from "@components/HomeSection";
-
 // Styling
 import styles from "@styles/pages/Home.module.scss";
 

@@ -1,24 +1,6 @@
 @use "../variables.scss" as globalVars;
 @media (min-width: globalVars.$breakpoint-pc) {
   .container {
-    padding: 0 0em;
-    p {
-      margin: 0;
-      padding: 0;
-    }
-    .columns {
-      max-width: 40%;
-    }
-    .quotes {
-      color: globalVars.$primary-color;
-      text-align: center;
-    }
-    .titles {
-      text-transform: uppercase;
-      font-weight: medium;
-      font-size: globalVars.$headings;
-      padding: 0;
-      margin: 0;
-    }
+    padding: 0;
   }
 }
