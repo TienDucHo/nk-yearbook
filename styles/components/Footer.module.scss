@@ -1,0 +1,25 @@
+@use "../variables.scss" as globalVars;
+
+.container {
+  width: 80%;
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  margin: auto 3.2rem 0 3.2rem;
+  padding: 0 0 1.2rem 0;
+  .columns {
+    justify-self: center;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    .title {
+      font-weight: normal;
+      font-size: globalVars.$header-footer;
+      color: globalVars.$primary-color;
+    }
+    .icon {
+      font-size: 2rem;
+    }
+  }
+}
