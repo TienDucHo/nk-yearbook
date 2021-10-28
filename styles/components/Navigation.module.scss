@@ -1,7 +1,7 @@
 @use "../variables.scss" as globalVars;
 @media (min-width: globalVars.$breakpoint-pc) {
   .nav {
-    font-size: globalVars.$header-footer;
+    font-size: globalVars.$header-footer * 2;
     z-index: 999;
     margin: 0;
     padding: 1rem 0;
