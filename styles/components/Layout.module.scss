@@ -1,0 +1,15 @@
+@use "../variables.scss" as globalVars;
+@media (min-width: globalVars.$breakpoint-pc) {
+  .container {
+    position: relative;
+    z-index: 0;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: auto;
+    background-image: url("../../public/images/white-paper-texture.jpg");
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px
+      rgba(globalVars.$primary-background-color, 0.75);
+  }
+}

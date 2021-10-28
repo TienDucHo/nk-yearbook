@@ -10,22 +10,22 @@ const Navigation = ({}) => {
       <ul className={navStyles.lists}>
         <li className={navStyles.listItems}>
           <Link href="/">
-            <a className={navStyles.links}>About PTNK</a>
+            <a className={navStyles.links}>Trường PTNK</a>
           </Link>
         </li>
         <li className={navStyles.listItems}>
           <Link href="/yearbooks">
-            <a className={navStyles.links}>Yearbooks</a>
+            <a className={navStyles.links}>Kỷ yếu</a>
           </Link>
         </li>
         <li className={navStyles.listItems}>
           <Link href="/events">
-            <a className={navStyles.links}>Events</a>
+            <a className={navStyles.links}>Sự kiện</a>
           </Link>
         </li>
         <li className={navStyles.listItems}>
           <Link href="/contact">
-            <a className={navStyles.links}>Contact us</a>
+            <a className={navStyles.links}>Liên hệ</a>
           </Link>
         </li>
       </ul>

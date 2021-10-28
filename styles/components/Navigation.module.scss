@@ -3,6 +3,7 @@
   .nav {
     font-size: globalVars.$header-footer;
     z-index: 999;
+    margin: 0;
     padding: 1rem 0;
     display: flex;
     flex-direction: column;
@@ -14,9 +15,9 @@
       justify-content: space-between;
       align-items: center;
       list-style: none;
-      margin: 1rem 0 2rem 0;
-      padding: 0;
+      padding: 1rem 0 2rem 0;
       .listItems {
+        text-transform: uppercase;
         color: globalVars.$primary-color;
         font-weight: bold;
         :hover {
