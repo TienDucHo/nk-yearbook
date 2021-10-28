@@ -7,11 +7,11 @@ import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
-    <div className={layoutStyles.container}>
-      <Navigation />
-      {children}
-      <Footer />
-    </div>
+      <div className={layoutStyles.container}>
+        <Navigation />
+        {children}
+        <Footer />
+      </div>
   );
 };
 

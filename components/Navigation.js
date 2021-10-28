@@ -29,7 +29,7 @@ const Navigation = ({}) => {
           </Link>
         </li>
       </ul>
-      <div className={navStyles.divider}></div>
+      <span className={navStyles.divider}></span>
     </nav>
   );
 };
