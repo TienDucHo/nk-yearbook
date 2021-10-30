@@ -1,14 +1,18 @@
 @use "../variables.scss" as globalVars;
 @media (min-width: globalVars.$breakpoint-pc) {
   .container {
-    z-index: 0;
     padding: 0;
     margin: 0;
     height: 100vh;
     width: 100%;
-    background: url("../../public/images/background.png");
+    background: #fff5c0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    .backgroundImg {
+      position: relative;
+      z-index: 1;
+      opacity: 0.5;
+    }
   }
 }

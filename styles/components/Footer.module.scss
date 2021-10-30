@@ -1,6 +1,7 @@
 @use "../variables.scss" as globalVars;
 
 .container {
+  z-index: 99;
   width: 80%;
   margin-top: auto;
   display: grid;
