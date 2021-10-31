@@ -1,15 +1,25 @@
 {
-  "about": [
-    { "title": "Trường PTNK", "link": "/about/" },
-    { "title": "Các thầy cô", "link": "/teachers" },
-    { "title": "Các hoạt động", "link": "/activities" },
-    { "title": "Những câu chuyện ở NK", "link": "/stories" }
-  ],
-  "yearbooks": [
-    { "title": "Kỷ yếu", "link": "/generations" },
-    { "title": "25 Thế hệ NK", "link": "/teachers" },
-    { "title": "25 Năm NK", "link": "/activities" }
-  ],
-  "events": [{ "title": "Sự kiện", "link": "/events" }],
-  "contact": [{ "title": "Liên hệ", "link": "/contact" }]
+  "about": {
+    "main": { "title": "Trường PTNK", "link": "/about" },
+    "links": [
+      { "title": "Các thầy cô", "link": "/about/teachers" },
+      { "title": "Các hoạt động", "link": "/about/activities" },
+      { "title": "Những câu chuyện ở NK", "link": "/about/stories" }
+    ]
+  },
+  "yearbooks": {
+    "main": { "title": "Kỷ yếu", "link": "/yearbooks" },
+    "links": [
+      { "title": "25 Thế hệ NK", "link": "/yearbooks" },
+      { "title": "25 Năm NK", "link": "/yearbooks/years" }
+    ]
+  },
+  "events": {
+    "main": { "title": "Sự kiện", "link": "/events" },
+    "links": []
+  },
+  "contact": {
+    "main": { "title": "Liên hệ", "link": "/contact" },
+    "links": []
+  }
 }

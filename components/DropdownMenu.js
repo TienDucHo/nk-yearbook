@@ -1,29 +1,31 @@
-import { useState } from "react";
 import Link from "next/link";
-import dropdownStyles from "@styles/components";
-const DropdownMenu = ({ listOfLinks }) => {
-  const [shown, setShown] = useState(false);
-  const showMenu = () => {
-    setShown(!shown);
-  };
+
+import dropdownStyles from "@styles/components/Dropdown.module.scss";
+import classNames from "classnames";
+
+const DropdownMenu = ({ className, listOfLinks }) => {
+  const drawerCla = classNames([dropdownStyles.drawer, className]);
+
+  const dropdownCla = classNames([
+    dropdownStyles.dropdown,
+    className,
+  ]);
+
+  const linksCla = classNames([dropdownStyles.links, className]);
+
   return (
-    <div>
-      <Link href={listOfLinks[0]["link"]}>
-        <a onMouseOver={showMenu}>{listOfLinks[0]["title"]}</a>
-      </Link>
-      {shown ? (
-        <ul>
-          {listOfLinks.map((element) => {
-            <li>
-              <Link href={element["links"]}>
-                <a className={dropdownStyles.links}>
-                  {element["title"]}
-                </a>
+    <div className={drawerCla}>
+      {
+        <ul className={dropdownCla}>
+          {listOfLinks.map((element, index) => (
+            <li key={index}>
+              <Link href={element["link"]}>
+                <a className={linksCla}>{element["title"]}</a>
               </Link>
-            </li>;
-          })}
+            </li>
+          ))}
         </ul>
-      ) : null}
+      }
     </div>
   );
 };
