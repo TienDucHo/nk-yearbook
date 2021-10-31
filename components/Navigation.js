@@ -23,7 +23,7 @@ const Navigation = ({}) => {
             </a>
           </Link>
         </li>
-        <li className={navStyles.listItems}>
+        {/* <li className={navStyles.listItems}>
           <Link href="/about">
             <a className={navStyles.links}>Trường PTNK</a>
           </Link>
@@ -42,7 +42,7 @@ const Navigation = ({}) => {
           <Link href="/contact">
             <a className={navStyles.links}>Liên hệ</a>
           </Link>
-        </li>
+        </li> */}
       </ul>
       <span className={navStyles.divider}></span>
     </nav>

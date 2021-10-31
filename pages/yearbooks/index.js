@@ -1,5 +1,5 @@
 const Yearbooks = ({}) => {
-  return <div>Yearbooks</div>;
+  return <div>25 Thế hệ Năng Khiếu</div>;
 };
 
 export default Yearbooks;
