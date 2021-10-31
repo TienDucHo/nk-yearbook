@@ -1,5 +1,6 @@
 // Libraries
 import Link from "next/link";
+import Image from "next/image";
 
 // Styling
 import navStyles from "@styles/components/Navigation.module.scss";
@@ -10,6 +11,20 @@ const Navigation = ({}) => {
       <ul className={navStyles.lists}>
         <li className={navStyles.listItems}>
           <Link href="/">
+            <a>
+              <Image
+                alt="NK Image"
+                src="/images/logoNK2.png"
+                width={91}
+                height={64}
+                layout="fixed"
+                className={navStyles.logo}
+              />
+            </a>
+          </Link>
+        </li>
+        <li className={navStyles.listItems}>
+          <Link href="/about">
             <a className={navStyles.links}>Trường PTNK</a>
           </Link>
         </li>

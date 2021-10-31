@@ -4,25 +4,28 @@
     font-size: globalVars.$header-footer * 2;
     z-index: 999;
     margin: 0;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     .lists {
+      //background-color: aquamarine;
       width: 80%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       list-style: none;
-      padding: 1rem 0 2rem 0;
+      padding: 0 0;
       .listItems {
         text-transform: uppercase;
         color: globalVars.$primary-color;
         font-weight: bold;
+        display: flex;
+        align-items: center;
         :hover {
-          color: globalVars.$white;
+          color: globalVars.$black;
         }
       }
     }

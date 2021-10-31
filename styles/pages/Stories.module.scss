@@ -1,0 +1,44 @@
+@use "../variables.scss" as globalVars;
+
+.container {
+  width: 65%;
+  .title {
+    font-weight: normal;
+    font-size: globalVars.$headings-1;
+  }
+  .eventCards {
+    display: flex;
+    width: 70%;
+    height: 10rem;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5rem 0;
+    .cardContent {
+      margin-left: 3rem;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      min-height: 100%;
+      justify-content: flex-start;
+      .basicInfo {
+        display: flex;
+        justify-content: flex-start; /* Pack items from the start */
+        align-items: center;
+        width: 100%;
+        .status {
+          border: solid 2px rgb(58, 189, 58);
+          padding: 0.5rem;
+          margin-right: 1rem;
+          color: rgb(58, 189, 58);
+        }
+        .storyTitle {
+          font-size: globalVars.$content * 1.5;
+          text-transform: uppercase;
+        }
+      }
+      .description {
+        font-size: globalVars.$content;
+      }
+    }
+  }
+}

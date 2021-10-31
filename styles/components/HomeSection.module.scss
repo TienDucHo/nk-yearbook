@@ -1,6 +1,7 @@
 @use "../variables.scss" as globalVar;
 @media (min-width: globalVar.$breakpoint-pc) {
   .sections {
+    z-index: 999;
     padding: 2em 0;
     .taglines {
       color: globalVar.$primary-color;
