@@ -53,6 +53,11 @@ const Navigation = ({}) => {
                 navArray[index] = 1;
                 dispatch({ nav: navArray });
               }}
+              onClick={() => {
+                let navArray = state.nav;
+                navArray[index] = 0;
+                dispatch({ nav: navArray });
+              }}
             >
               <Link href={links[key]["main"]["link"]}>
                 <a className={navStyles.links}>

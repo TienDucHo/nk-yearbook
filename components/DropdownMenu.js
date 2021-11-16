@@ -36,6 +36,11 @@ const DropdownMenu = ({ className, listOfLinks, index }) => {
         navArray[index] = 0;
         dispatch({ nav: navArray });
       }}
+      onClick={() => {
+        let navArray = state.nav;
+        navArray[index] = 0;
+        dispatch({ nav: navArray });
+      }}
     >
       {listOfLinks.map((element, index) => (
         <li key={index}>
