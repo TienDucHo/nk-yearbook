@@ -1,0 +1,28 @@
+@use "../variables.scss" as globalVars;
+@media (min-width: globalVars.$breakpoint-pc) {
+  .container {
+    width: 80%;
+    .hero {
+      margin: 5rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 52rem;
+      position: relative;
+      .title {
+        z-index: 1;
+        font-family: globalVars.$prata;
+        font-size: 4rem;
+        font-weight: normal;
+        text-shadow: 0.5px 0.5px 2px globalVars.$black;
+      }
+    }
+    .content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      column-gap: 2rem;
+      row-gap: 2rem;
+    }
+  }
+}
