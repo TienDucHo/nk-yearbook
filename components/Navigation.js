@@ -13,7 +13,7 @@ import DropdownMenu from "./DropdownMenu";
 // Styling
 import navStyles from "@styles/components/Navigation.module.scss";
 
-var links = require("@libs/links.json");
+let links = require("@libs/links.json");
 
 const useGlobalState = () => [
   useContext(globalStateContext),

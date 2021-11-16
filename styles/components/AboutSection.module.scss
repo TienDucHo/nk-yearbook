@@ -1,0 +1,29 @@
+@use "../variables.scss" as globalVars;
+@media (min-width: globalVars.$breakpoint-pc) {
+  .section {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "content image";
+    justify-items: center;
+    &.right {
+      grid-template-areas: "image content";
+    }
+    .contents {
+      align-self: center;
+      grid-area: content;
+      .title {
+        white-space: pre-wrap; // Newlines
+        font-family: globalVars.$prata;
+        font-size: 1.8rem;
+        font-weight: 400;
+      }
+    }
+    .image {
+      align-self: stretch;
+      grid-area: image;
+      position: relative;
+      width: 80%;
+    }
+  }
+}
