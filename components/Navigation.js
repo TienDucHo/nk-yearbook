@@ -35,6 +35,7 @@ const Navigation = ({}) => {
               height={64}
               layout="fixed"
             />
+            25 Năm NK
           </a>
         </Link>
         <ul className={navStyles.lists}>
@@ -44,12 +45,12 @@ const Navigation = ({}) => {
               key={index}
               onMouseEnter={() => {
                 let navArray = state.nav;
+                var i,
+                  n = navArray.length;
+                for (i = 0; i < n; ++i) {
+                  navArray[i] = 0;
+                }
                 navArray[index] = 1;
-                dispatch({ nav: navArray });
-              }}
-              onMouseLeave={() => {
-                let navArray = state.nav;
-                navArray[index] = 0;
                 dispatch({ nav: navArray });
               }}
             >

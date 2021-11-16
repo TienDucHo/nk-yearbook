@@ -23,7 +23,6 @@ const DropdownMenu = ({ className, listOfLinks, index }) => {
 
   const linksCla = dropdownStyles.links;
   const [state, dispatch] = useGlobalState();
-  let navState = state.nav[index];
   return (
     <ul
       className={dropdownCla}
