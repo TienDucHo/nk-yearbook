@@ -1,13 +1,18 @@
 @use "../variables.scss" as globalVars;
 @media (min-width: globalVars.$breakpoint-pc) {
   .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 80%;
     .hero {
+      flex-grow: 2;
+      width: 80%;
       margin: 5rem 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 52rem;
+      min-height: 50rem;
       position: relative;
       .title {
         z-index: 1;
@@ -18,11 +23,37 @@
       }
     }
     .content {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto;
-      column-gap: 2rem;
-      row-gap: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      .swiper {
+        width: 40%;
+        .slide {
+          display: flex;
+          justify-content: center;
+          font-family: globalVars.$prata;
+          font-size: 1.8rem;
+          align-items: center;
+          width: 20%;
+        }
+        margin-bottom: 4rem;
+      }
+      .next {
+        &::after {
+          content: "lmao";
+        }
+      }
+      .teachers {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        justify-items: center;
+        column-gap: 1rem;
+        row-gap: 1rem;
+      }
     }
   }
 }

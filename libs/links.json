@@ -2,7 +2,7 @@
   "about": {
     "main": { "title": "Giới thiệu", "link": "/about" },
     "links": [
-      { "title": "Các thầy cô", "link": "/about/teachers" },
+      { "title": "Các thầy cô", "link": "/about/teachers/" },
       { "title": "Các hoạt động", "link": "/about/activities" },
       { "title": "Những câu chuyện ở NK", "link": "/about/stories" }
     ]

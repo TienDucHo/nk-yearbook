@@ -1,6 +1,15 @@
 @use "./variables.scss" as globalVars;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Prata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Prata&family=Sriracha&display=swap");
+
+@font-face {
+  font-family: "Eyecicles";
+  src: url("/fonts/Eyecicles/Eyecicles.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 html,
 body {
   padding: 0;
@@ -22,5 +31,24 @@ a {
   html,
   body {
     font-size: 16px;
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: globalVars.$black;
+      &::after {
+        font-family: globalVars.$prata;
+      }
+    }
+    .swiper-button-prev {
+      &::after {
+        content: "c";
+        font-family: globalVars.$eyecicles;
+      }
+    }
+    .swiper-button-next {
+      &::after {
+        content: "d";
+        font-family: globalVars.$eyecicles;
+      }
+    }
   }
 }

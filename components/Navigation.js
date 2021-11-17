@@ -30,12 +30,10 @@ const Navigation = ({}) => {
           <a className={navStyles.logo}>
             <Image
               alt="NK Image"
-              src="/images/logoNK2.png"
+              src="/images/logo.png"
               width={91}
               height={64}
-              layout="fixed"
             />
-            25 Năm NK
           </a>
         </Link>
         <ul className={navStyles.lists}>
