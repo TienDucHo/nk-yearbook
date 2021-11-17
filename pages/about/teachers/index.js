@@ -22,7 +22,7 @@ import "swiper/css/bundle";
 const Teachers = ({ subjects }) => {
   const [subject, setSubject] = useState(0);
   const sort_by_key = (array, key) => {
-    return array.sort(function (a, b) {
+    return [].slice.call(array).sort(function (a, b) {
       var x = a[key];
       var y = b[key];
       return x < y ? -1 : x > y ? 1 : 0;
