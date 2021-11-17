@@ -74,7 +74,7 @@ const Teachers = ({ subjects }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch(`${server}/subjects`);
   const subjects = await res.json();
   return {
