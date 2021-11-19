@@ -29,7 +29,13 @@
       align-items: center;
       width: 100%;
       .swiper {
-        width: 40%;
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 60%;
+        background-color: bisque;
         .slide {
           display: flex;
           justify-content: center;
@@ -39,11 +45,6 @@
           width: 20%;
         }
         margin-bottom: 4rem;
-      }
-      .next {
-        &::after {
-          content: "lmao";
-        }
       }
       .teachers {
         display: grid;

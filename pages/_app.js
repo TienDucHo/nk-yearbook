@@ -21,11 +21,6 @@ const GlobalStateProvider = ({ children }) => {
   );
 };
 
-const useGlobalState = () => [
-  useContext(globalStateContext),
-  useContext(dispatchStateContext),
-];
-
 function MyApp({ Component, pageProps }) {
   return (
     <GlobalStateProvider>

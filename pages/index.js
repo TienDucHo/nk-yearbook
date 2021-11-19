@@ -14,17 +14,18 @@ export default function Home() {
           objectFit="cover"
           objectPosition="center"
           alt="PTNK"
+          priority
           className={styles.artwork}
         ></Image>
         <div className={styles.title}>
           <h1>
             Kỷ Yếu <br />
             25 Năm Năng Khiếu <br />
-            <h2>1993 - 2021</h2>
-            <h3>
-              Trường Phổ Thông Năng Khiếu - Đại học Quốc Gia TP.HCM
-            </h3>
           </h1>
+          <h2>1993 - 2021</h2>
+          <h3>
+            Trường Phổ Thông Năng Khiếu - Đại học Quốc Gia TP.HCM
+          </h3>
         </div>
       </div>
     </div>

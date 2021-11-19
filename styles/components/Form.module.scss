@@ -1,0 +1,10 @@
+@use "../variables.scss" as globalVars;
+@media (min-width: globalVars.$breakpoint-pc) {
+  .form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+}

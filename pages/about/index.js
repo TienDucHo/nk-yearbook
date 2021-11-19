@@ -21,6 +21,7 @@ const About = ({}) => {
           layout="fill"
           objectFit="contain"
           objectPosition="center"
+          priority
           className={aboutStyles.image}
         ></Image>
         <div className={aboutStyles.title}>

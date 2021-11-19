@@ -1,0 +1,34 @@
+[
+  {
+    "code": "t",
+    "name": "Toán"
+  },
+  {
+    "code": "i",
+    "name": "Tin"
+  },
+  {
+    "code": "l",
+    "name": "Lý"
+  },
+  {
+    "code": "h",
+    "name": "Hóa"
+  },
+  {
+    "code": "s",
+    "name": "Sinh"
+  },
+  {
+    "code": "v",
+    "name": "Văn"
+  },
+  {
+    "code": "e",
+    "name": "Anh"
+  },
+  {
+    "code": "kc",
+    "name": "Không Chuyên / A"
+  }
+]

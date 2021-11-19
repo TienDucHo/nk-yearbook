@@ -31,23 +31,23 @@ a {
   html,
   body {
     font-size: 16px;
-    .swiper-button-prev,
-    .swiper-button-next {
-      color: globalVars.$black;
-      &::after {
-        font-family: globalVars.$prata;
-      }
-    }
     .swiper-button-prev {
+      width: 10%;
+      height: 100%;
+      background-image: url("../public/images/left.png") !important;
+      object-fit: cover;
       &::after {
-        content: "c";
-        font-family: globalVars.$eyecicles;
+        content: "";
       }
     }
     .swiper-button-next {
+      width: 10%;
+      height: 100%;
+      z-index: 999;
+      background-image: url("../public/images/right.png") !important;
+      object-fit: cover;
       &::after {
-        content: "d";
-        font-family: globalVars.$eyecicles;
+        content: "";
       }
     }
   }
