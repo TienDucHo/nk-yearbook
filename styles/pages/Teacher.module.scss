@@ -52,10 +52,10 @@
             background-color: rgba($color: #000000, $alpha: 0);
             border-bottom: 2px solid globalVars.$black;
             height: 3rem;
-            font-size: 1.6rem;
+            font-size: 1.2rem;
             font-family: "Inter", sans-serif;
             &::placeholder {
-              font-size: 1.4rem;
+              font-size: 1.2rem;
               padding: 0;
               margin: 0;
             }
@@ -63,12 +63,31 @@
               outline-width: 0;
             }
           }
-          textarea {
-            height: 20%;
-            font-size: 1.2rem;
+          .dropdown {
+            display: flex;
+            width: 100%;
+            gap: 2rem;
+            align-items: center;
           }
-          select {
-            appearance: none;
+          .button {
+            align-self: flex-end;
+            font-size: 1.2rem;
+            border-radius: 1rem;
+            padding: 1rem 2rem;
+            border: 1.5px solid globalVars.$black;
+            text-align: center;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0);
+            &:hover {
+              background-color: #ffef94;
+            }
+
+            &:active {
+              margin-left: 1px 1px 0;
+              box-shadow: -1px -1px 1px #000;
+              outline: 1.5px solid globalVars.$black;
+              background-color: #ffef94;
+            }
           }
         }
       }

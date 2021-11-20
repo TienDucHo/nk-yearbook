@@ -1,34 +1,34 @@
 [
   {
-    "code": "t",
-    "name": "Toán"
+    "value": "t",
+    "label": "Toán"
   },
   {
-    "code": "i",
-    "name": "Tin"
+    "value": "i",
+    "label": "Tin"
   },
   {
-    "code": "l",
-    "name": "Lý"
+    "value": "l",
+    "label": "Lý"
   },
   {
-    "code": "h",
-    "name": "Hóa"
+    "value": "h",
+    "label": "Hóa"
   },
   {
-    "code": "s",
-    "name": "Sinh"
+    "value": "s",
+    "label": "Sinh"
   },
   {
-    "code": "v",
-    "name": "Văn"
+    "value": "v",
+    "label": "Văn"
   },
   {
-    "code": "e",
-    "name": "Anh"
+    "value": "e",
+    "label": "Anh"
   },
   {
-    "code": "kc",
-    "name": "Không Chuyên / A"
+    "value": "kc",
+    "label": "Không Chuyên / A"
   }
 ]
