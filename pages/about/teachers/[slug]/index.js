@@ -41,11 +41,14 @@ const customDropdownStyles = {
   }),
   container: (base, state) => ({
     ...base,
-    flex: 1,
+    width: "100%",
   }),
   control: (base, state) => ({
     ...base,
     background: "rgba(0, 0, 0, 0)",
+    border: "none",
+    borderRadius: "0",
+    borderBottom: "1.2px solid #333333",
   }),
 };
 
@@ -67,7 +70,7 @@ const Teacher = ({ teacher }) => {
     console.log(newPost);
     let newList = [...postList, newPost];
     updatePostList(newList);
-    const add = await fetch(`${tempServer}/posts`, {
+    const add = await fetch(`${server}/posts`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -170,7 +173,7 @@ const Teacher = ({ teacher }) => {
 
 export const getServerSideProps = async (context) => {
   const res = await fetch(
-    `${tempServer}/teachers?slug=${context.params.slug}`
+    `${server}/teachers?slug=${context.params.slug}`
   );
   const teacher = await res.json();
   return {

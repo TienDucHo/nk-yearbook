@@ -4,17 +4,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0rem;
-  max-height: 32rem;
-  width: 100%;
+  width: 90%;
+  height: 32rem;
   .imageContainer {
     position: relative;
     width: 100%;
-    min-height: 32rem;
-    height: 60%;
+    height: 28rem;
   }
   .title {
-    font-size: 3.2rem;
+    font-size: 1.2rem;
     font-weight: normal;
     font-family: globalVars.$serif;
     margin-bottom: 0;
@@ -22,76 +20,10 @@
   }
 }
 
-@media (min-width: 320px) {
+@media (min-width: 460px) {
   .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0rem;
-    max-height: 32rem;
-    width: 100%;
-    .imageContainer {
-      position: relative;
-      width: 100%;
-      min-height: 32rem;
-      height: 60%;
-    }
     .title {
-      font-size: 2rem;
-      font-weight: normal;
-      font-family: globalVars.$serif;
-      margin-bottom: 0;
-      text-align: center;
-    }
-  }
-}
-
-@media (min-width: 480px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0rem;
-    min-height: 56rem;
-    width: 80%;
-    .imageContainer {
-      position: relative;
-      width: 80%;
-      height: 36rem;
-    }
-    .title {
-      text-align: center;
-      font-size: 1.6rem;
-      font-weight: normal;
-      font-family: globalVars.$serif;
-      margin-bottom: 0rem;
-      text-align: center;
-    }
-  }
-}
-
-@media (min-width: 780px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0rem;
-    height: 36rem;
-    width: 80%;
-    .imageContainer {
-      position: relative;
-      width: 80%;
-      height: 50%;
-    }
-    .title {
-      font-size: 1.2rem;
-      font-weight: normal;
-      font-family: globalVars.$serif;
-      margin-bottom: 0rem;
-      text-align: center;
+      font-size: 1.8rem;
     }
   }
 }
@@ -103,8 +35,7 @@
     justify-content: center;
     align-items: center;
     gap: 0rem;
-    height: 36rem;
-    width: 80%;
+    width: 100%;
     .imageContainer {
       position: relative;
       width: 100%;

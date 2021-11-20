@@ -135,7 +135,6 @@ const Teachers = ({ subjects }) => {
             freeMode={true}
             scrollbar={{
               draggable: true,
-              el: ".swiper-scrollbar",
             }}
             mousewheel={true}
             className={teachersStyle.teacherSwiper}
@@ -145,7 +144,6 @@ const Teachers = ({ subjects }) => {
                 <TeacherCard key={index} data={item} />
               ))}
             </SwiperSlide>
-            <div className="swiper-scrollbar"></div>
           </Swiper>
         </div>
       </div>
@@ -154,7 +152,7 @@ const Teachers = ({ subjects }) => {
 };
 
 export const getServerSideProps = async () => {
-  const res = await fetch(`${tempServer}/subjects`);
+  const res = await fetch(`${server}/subjects`);
   const subjects = await res.json();
   return {
     props: {
