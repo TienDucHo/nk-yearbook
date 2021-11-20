@@ -1,4 +1,3 @@
-import { text } from "@fortawesome/fontawesome-svg-core";
 import styled from "styled-components";
 
 const textColor = ["#F178B6", "#333333", "#566DE7"];
@@ -15,7 +14,7 @@ const StyledConfession = styled.div`
 const Confession = ({ data }) => {
   return (
     <StyledConfession
-      color={Math.floor(Math.random() * 3)}
+      color={"#333333"}
       tall={data["content"].length > 300}
     >
       <p>{data["content"]}</p>

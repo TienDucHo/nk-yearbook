@@ -61,63 +61,75 @@ const Teachers = ({ subjects }) => {
         </h1>
       </div>
       <div className={teachersStyle.content}>
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          onSlideChange={(swiper) => {
-            setSubject(swiper.realIndex);
-          }}
-          effect={"fade"}
-          fadeEffect={{ crossFade: true }}
-          navigation={{
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          }}
-          loop={true}
-          className={teachersStyle.swiper}
-        >
-          {subjects.map((item, index) => (
-            <SwiperSlide className={teachersStyle.slide} key={index}>
-              <span>Tổ {item["name"]}</span>
-            </SwiperSlide>
-          ))}
-          <div className="swiper-button-prev" style={{ zIndex: 999 }}>
-            <Image
-              src={"/images/left.png"}
-              width={50}
-              height={100}
-              alt="Left button"
-            />
-          </div>
-          <div className="swiper-button-next" style={{ zIndex: 999 }}>
-            <Image
-              src={"/images/right.png"}
-              width={50}
-              height={100}
-              alt="Right button"
-            />
-          </div>
-        </Swiper>
-
-        <Swiper
-          direction={"vertical"}
-          slidesPerView={"auto"}
-          freeMode={true}
-          scrollbar={{
-            draggable: true,
-            el: ".swiper-scrollbar",
-          }}
-          mousewheel={true}
-          className={teachersStyle.teacherSwiper}
-        >
-          <SwiperSlide className={teachersStyle.teacherSlide}>
-            {subjects[subject]["teachers"].map((item, index) => (
-              <TeacherCard key={index} data={item} />
+        <div className={teachersStyle.contentHeader}>
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={30}
+            slidesPerView={1}
+            onSlideChange={(swiper) => {
+              setSubject(swiper.realIndex);
+            }}
+            effect={"fade"}
+            fadeEffect={{ crossFade: true }}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            loop={true}
+            className={teachersStyle.swiper}
+          >
+            {subjects.map((item, index) => (
+              <SwiperSlide
+                className={teachersStyle.slide}
+                key={index}
+              >
+                <span>Tổ {item["name"]}</span>
+              </SwiperSlide>
             ))}
-          </SwiperSlide>
-          <div className="swiper-scrollbar"></div>
-        </Swiper>
+            <div
+              className="swiper-button-prev"
+              style={{ zIndex: 999 }}
+            >
+              <Image
+                src={"/images/left.png"}
+                width={50}
+                height={100}
+                alt="Left button"
+              />
+            </div>
+            <div
+              className="swiper-button-next"
+              style={{ zIndex: 999 }}
+            >
+              <Image
+                src={"/images/right.png"}
+                width={50}
+                height={100}
+                alt="Right button"
+              />
+            </div>
+          </Swiper>
+        </div>
+        <div className={teachersStyle.contentBody}>
+          <Swiper
+            direction={"vertical"}
+            slidesPerView={"auto"}
+            freeMode={true}
+            scrollbar={{
+              draggable: true,
+              el: ".swiper-scrollbar",
+            }}
+            mousewheel={true}
+            className={teachersStyle.teacherSwiper}
+          >
+            <SwiperSlide className={teachersStyle.teacherSlide}>
+              {subjects[subject]["teachers"].map((item, index) => (
+                <TeacherCard key={index} data={item} />
+              ))}
+            </SwiperSlide>
+            <div className="swiper-scrollbar"></div>
+          </Swiper>
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 @use "../variables.scss" as globalVars;
 @media (min-width: globalVars.$breakpoint-pc) {
   .container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,6 +9,10 @@
     margin-top: 10rem;
     gap: 4rem;
     width: 100%;
+    background: url("../../public/images/HÌNH\ TỪNG\ THẦY\ CÔ.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Inter", sans-serif;
     .subject {
       align-self: flex-start;
       font-weight: normal;
@@ -40,10 +45,37 @@
           display: flex;
           flex-direction: column;
           gap: 2rem;
+          textarea,
+          input[type="text"] {
+            box-sizing: border-box;
+            border: none;
+            background-color: rgba($color: #000000, $alpha: 0);
+            border-bottom: 2px solid globalVars.$black;
+            height: 3rem;
+            font-size: 1.6rem;
+            font-family: "Inter", sans-serif;
+            &::placeholder {
+              font-size: 1.4rem;
+              padding: 0;
+              margin: 0;
+            }
+            &:focus {
+              outline-width: 0;
+            }
+          }
+          textarea {
+            height: 20%;
+            font-size: 1.2rem;
+          }
+          select {
+            appearance: none;
+          }
         }
       }
       .confessions {
         display: grid;
+        justify-items: center;
+        align-items: center;
         grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
         grid-auto-rows: 15rem;
         gap: 2rem;

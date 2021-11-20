@@ -59,13 +59,18 @@ const Teacher = ({ teacher }) => {
             className={teacherStyle.form}
             onSubmit={handleSubmit(onSubmit)}
           >
-            <input
+            <textarea
               {...register("content", { required: true })}
-              placeholder="LỜI CHÚC"
+              placeholder="LỜI YÊU THƯƠNG"
+              type="text"
+              className={teacherStyle.confessionContainer}
+              cols={5}
+              rows={4}
             />
             <input
               {...register("author", { required: true })}
               placeholder="NGƯỜI GỬI"
+              type="text"
             />
             <select {...register("class")}>
               {classes.map((item, index) => (
