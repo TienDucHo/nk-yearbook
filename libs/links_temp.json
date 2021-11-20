@@ -1,0 +1,10 @@
+{
+  "about": {
+    "main": { "title": "Giới thiệu", "link": "/about" },
+    "links": []
+  },
+  "teacher": {
+    "main": { "title": "Các thầy cô", "link": "/about/teachers" },
+    "links": []
+  }
+}

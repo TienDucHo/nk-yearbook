@@ -5,18 +5,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.2rem;
+    gap: 0rem;
     height: 36rem;
     width: 80%;
     .imageContainer {
       position: relative;
       width: 100%;
-      height: 90%;
+      height: 70%;
     }
     .title {
       font-size: 1.5rem;
       font-weight: normal;
-      font-family: globalVars.$prata;
+      font-family: globalVars.$serif;
       margin-bottom: 0rem;
       text-align: center;
     }
