@@ -1,4 +1,42 @@
 @use "../variables.scss" as globalVars;
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 1rem;
+  font-size: globalVars.$header-footer;
+  .logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+    width: 20%;
+  }
+  .lists {
+    flex-grow: 2;
+    grid-area: list;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1rem;
+    .listItems {
+      text-align: center;
+      width: 50%;
+      &:active {
+        color: globalVars.$primary-color;
+      }
+    }
+  }
+}
+.divider {
+  margin-top: 0.5rem;
+  height: 1.25px;
+  width: 80%;
+  background-color: globalVars.$black;
+}
 
 @media (min-width: globalVars.$breakpoint-pc) {
   .nav {

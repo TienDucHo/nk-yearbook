@@ -1,22 +1,10 @@
-import styled from "styled-components";
-
 const textColor = ["#F178B6", "#333333", "#566DE7"];
 
-const StyledConfession = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 280px;
-  color: ${(props) => textColor[props.color]};
-  grid-row: ${(props) =>
-    props.tall === true ? "span 2 / auto" : "1"};
-`;
+import confessionStyles from "@styles/components/Confession.module.scss";
 
 const Confession = ({ data }) => {
   return (
-    <StyledConfession
-      color={"#333333"}
-      tall={data["content"].length > 300}
-    >
+    <div className={confessionStyles.container}>
       <p>{data["content"]}</p>
       <h3 style={{ color: textColor[2], alignSelf: "flex-end" }}>
         {data["author"] + " " + data["class"].toUpperCase()}
@@ -29,7 +17,7 @@ const Confession = ({ data }) => {
           useGrouping: false,
         })}
       </h3>
-    </StyledConfession>
+    </div>
   );
 };
 

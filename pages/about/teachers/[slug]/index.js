@@ -45,15 +45,6 @@ const customDropdownStyles = {
     ...base,
     background: "rgba(0, 0, 0, 0)",
   }),
-  // control: () => ({
-  //   // none of react-select's styles are passed to <Control />
-  //   width: 200,
-  // }),
-  // singleValue: (provided, state) => {
-  //   const opacity = state.isDisabled ? 0.5 : 1;
-  //   const transition = "opacity 300ms";
-  //   return { ...provided, opacity, transition };
-  // },
 };
 
 const classes = require("libs/classes.json");
@@ -62,22 +53,28 @@ const Teacher = ({ teacher }) => {
   const posts = teacher[0]["posts"];
   const [postList, updatePostList] = useState(posts);
   const { handleSubmit, control, reset } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    // post.teacher = teacher[0];
-    // let newList = [...postList, post];
-    // post["year"] = parseInt(post["year"]);
-    // updatePostList(newList);
-    // const add = await fetch(`${server}/posts`, {
-    //   method: "POST",
-    //   headers: {
-    //     Accept: "application/json",
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(post),
-    // });
-    // const addResponse = await add.json();
-    // console.log(addResponse);
+  const onSubmit = async (post) => {
+    console.log(post);
+    let newPost = {
+      author: post.author,
+      content: post.content,
+      year: post.year.value,
+      class: post.class.value,
+      teacher: teacher[0],
+    };
+    console.log(newPost);
+    let newList = [...postList, newPost];
+    updatePostList(newList);
+    const add = await fetch(`${server}/posts`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newPost),
+    });
+    const addResponse = await add.json();
+    console.log(addResponse);
   };
   return (
     <div className={teacherStyle.container}>
@@ -88,7 +85,7 @@ const Teacher = ({ teacher }) => {
               src={teacher[0]["portrait"]["url"]}
               alt={teacher[0]["prefix"] + " " + teacher[0]["name"]}
               layout="fill"
-              objectFit="cover"
+              objectFit="contain"
               objectPosition="center"
               className={teacherStyle.image}
             ></Image>
@@ -112,7 +109,11 @@ const Teacher = ({ teacher }) => {
             <Controller
               name="author"
               control={control}
-              rules={{ required: true }}
+              rules={{
+                required: true,
+                minLength: 11,
+                maxLength: 400,
+              }}
               render={({ field }) => (
                 <TextareaAutosize
                   placeholder="NGƯỜI GỬI"
@@ -153,28 +154,6 @@ const Teacher = ({ teacher }) => {
               value="Gửi"
               className={teacherStyle.button}
             />
-            {/* <textarea
-              {...register("content", { required: true })}
-              placeholder="LỜI YÊU THƯƠNG"
-              type="text"
-              className={teacherStyle.confessionContainer}
-              cols={5}
-              rows={4}
-            /> */}
-            {/* <input
-              {...register("author", { required: true })}
-              placeholder="NGƯỜI GỬI"
-              type="text"
-            />
-            <select {...register("class")}>
-              {classes.map((item, index) => (
-                <option value={item.code} key={index}>
-                  {item.name}
-                </option>
-              ))}
-            </select>
-            <Select options={yearOptions} {...register("year")} />
-            <input type="submit" value="Gửi" /> */}
           </form>
         </div>
         <div className={teacherStyle.confessions}>

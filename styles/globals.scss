@@ -8,6 +8,17 @@ body {
   margin: 0;
   font-family: "Inter", sans-serif;
   color: globalVars.$black;
+  font-size: 2px;
+  .swiper-button-prev {
+    &::after {
+      content: "";
+    }
+  }
+  .swiper-button-next {
+    &::after {
+      content: "";
+    }
+  }
 }
 
 a {
@@ -18,22 +29,33 @@ a {
 * {
   box-sizing: border-box;
 }
+@media (min-width: globalVars.$breakpoint-mobile) {
+  html,
+  body {
+    font-size: 8px;
+  }
+}
+
+@media (min-width: 480px) {
+  html,
+  body {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 960px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}
 
 @media (min-width: globalVars.$breakpoint-pc) {
   html,
   body {
     font-size: 16px;
     --swiper-navigation-size: 6rem;
-    .swiper-button-prev {
-      &::after {
-        content: "";
-      }
-    }
-    .swiper-button-next {
-      &::after {
-        content: "";
-      }
-    }
+
     .swiper-slide {
       font-size: 18px;
       height: auto;

@@ -1,0 +1,12 @@
+@use "../variables.scss" as globalVars;
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 960px) {
+  .container {
+    min-height: 200px;
+  }
+}

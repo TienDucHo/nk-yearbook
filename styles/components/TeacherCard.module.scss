@@ -1,4 +1,25 @@
 @use "../variables.scss" as globalVars;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+  max-height: 32rem;
+  width: 80%;
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    min-height: 32rem;
+  }
+  .title {
+    font-size: 2rem;
+    font-weight: normal;
+    font-family: globalVars.$serif;
+    margin-bottom: 0;
+    text-align: center;
+  }
+}
 @media (min-width: globalVars.$breakpoint-pc) {
   .container {
     display: flex;
