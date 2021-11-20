@@ -34,11 +34,11 @@ const About = ({}) => {
           </span>
         </div>
       </div>
-      <div className={aboutStyles.content}>
+      {/* <div className={aboutStyles.content}>
         <AboutSection data={data[0]}></AboutSection>
         <AboutSection data={data[1]} right={true}></AboutSection>
         <AboutSection data={data[2]}></AboutSection>
-      </div>
+      </div> */}
     </div>
   );
 };
