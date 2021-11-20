@@ -9,16 +9,18 @@ const Footer = ({}) => {
   return (
     <div className={footerStyles.container}>
       <div className={footerStyles.columns}>
-        <h5 className={footerStyles.title}>Our contact</h5>
-        <p>Content</p>
-        <h5 className={footerStyles.title}>+84123456789</h5>
-        <p>content@gmail.com</p>
-        <FontAwesomeIcon
-          icon={faFacebook}
-          className={footerStyles.icon}
-        />
+        <h5 className={footerStyles.title}>Liên hệ</h5>
+        <p>0903735746 (Ms. An Nguyen)</p>
+        <p>0924221089 (Ms. Quan Vu)</p>
+        <p>info@ptnk.me</p>
+        <a href="https://www.facebook.com/profile.php?id=100010201812366">
+          <FontAwesomeIcon
+            icon={faFacebook}
+            className={footerStyles.icon}
+          />
+        </a>
       </div>
-      <div className={footerStyles.columns}>
+      {/* <div className={footerStyles.columns}>
         <h5 className={footerStyles.title}>Our contact</h5>
         <p>Content</p>
         <p>Content</p>
@@ -31,7 +33,7 @@ const Footer = ({}) => {
           Sign up for our newsletter
         </h5>
         <p>Your email here...</p>
-      </div>
+      </div> */}
     </div>
   );
 };
