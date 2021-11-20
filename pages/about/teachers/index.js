@@ -63,8 +63,6 @@ const Teachers = ({ subjects }) => {
     );
   }
 
-  console.log(Intl.Collator("vi").compare("Hùng", "Hải"));
-
   return (
     <div className={teachersStyle.container}>
       <div className={teachersStyle.hero}>

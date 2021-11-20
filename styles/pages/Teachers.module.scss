@@ -5,15 +5,15 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 80%;
   .hero {
     flex-grow: 2;
     width: 80%;
-    margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 40rem;
+    min-height: 200px;
+    height: 40%;
     position: relative;
     .title {
       z-index: 1;
@@ -31,14 +31,15 @@
     align-items: center;
     width: 100%;
     position: relative;
-    height: 60%;
+    height: 250px;
+    padding: 2rem 0;
     .contentHeader {
       background: url("../../public/images/tổ.png");
       background-size: auto;
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      width: 30%;
+      width: 80%;
       height: 10rem;
       display: flex;
       justify-content: center;
@@ -46,17 +47,18 @@
       font-weight: bold;
       .swiper {
         display: flex;
-        width: 100%;
+        width: 80%;
+        max-width: 80rem;
         margin: 0;
         margin-bottom: 4rem;
-        height: 4rem;
-
+        height: 15rem;
+        min-width: 5rem;
         .slide {
           display: flex;
           justify-content: center;
           align-items: center;
           font-size: 1.4rem;
-
+          width: 100%;
           span {
             display: flex;
             justify-content: center;
@@ -64,6 +66,7 @@
             text-align: center;
             width: 100%;
             height: 100%;
+            font-size: 2.6rem;
           }
         }
       }
@@ -76,7 +79,7 @@
       align-items: center;
       width: 100%;
       position: relative;
-      height: 60%;
+      height: 80%;
       background: url("../../public/images/HÌNH\ TỪNG\ THẦY\ CÔ.png");
       background-size: auto;
       background-repeat: no-repeat;
@@ -87,7 +90,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 90rem;
+        padding: 2rem;
         .teacherSlide {
           width: 100%;
           height: auto !important;
@@ -97,6 +100,334 @@
           justify-items: center;
           grid-auto-rows: 32rem;
           gap: 16rem;
+          height: 100% !important;
+          overflow: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    .hero {
+      flex-grow: 2;
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+      height: 40%;
+      position: relative;
+      .title {
+        z-index: 1;
+        text-align: center;
+        font-family: globalVars.$serif;
+        font-size: 3rem;
+        font-weight: normal;
+        text-shadow: 0.5px 0.5px 2px globalVars.$black;
+      }
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      height: 500px;
+      padding: 2rem 0;
+      .contentHeader {
+        background: url("../../public/images/tổ.png");
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 60%;
+        height: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        .swiper {
+          display: flex;
+          width: 80%;
+          max-width: 80rem;
+          margin: 0;
+          margin-bottom: 4rem;
+          height: 15rem;
+          min-width: 5rem;
+          .slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.4rem;
+            width: 100%;
+            span {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              width: 100%;
+              height: 100%;
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+
+      .contentBody {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        height: 80%;
+        background: url("../../public/images/HÌNH\ TỪNG\ THẦY\ CÔ.png");
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        .teacherSwiper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 80%;
+          padding: 2rem;
+          .teacherSlide {
+            width: 100%;
+            height: auto !important;
+            display: grid;
+            grid-template-columns: 1;
+            align-items: center;
+            justify-items: center;
+            grid-auto-rows: 32rem;
+            gap: 16rem;
+            height: 100% !important;
+            overflow: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 480px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    .hero {
+      flex-grow: 2;
+      width: 80%;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 24rem;
+      position: relative;
+      .title {
+        z-index: 1;
+        text-align: center;
+        font-family: globalVars.$serif;
+        font-size: 3rem;
+        font-weight: normal;
+      }
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      min-height: 60rem;
+      padding: 0rem 0;
+      .contentHeader {
+        background: url("../../public/images/tổ.png");
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 80%;
+        min-width: 50%;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        .swiper {
+          display: flex;
+          min-width: 300px;
+          width: 100%;
+          margin: 4rem;
+          margin-bottom: 4rem;
+          height: 4rem;
+
+          .slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.4rem;
+
+            span {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+
+      .contentBody {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        height: 60%;
+        background: url("../../public/images/HÌNH\ TỪNG\ THẦY\ CÔ.png");
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        .teacherSwiper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 96rem;
+          .teacherSlide {
+            width: 100%;
+            height: auto !important;
+            display: grid;
+            grid-template-columns: 1;
+            align-items: center;
+            justify-items: center;
+            grid-auto-rows: 32rem;
+            gap: 16rem;
+            padding: 2rem;
+            height: 100% !important;
+            overflow: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 780px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    .hero {
+      flex-grow: 2;
+      width: 80%;
+      margin-top: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50rem;
+      position: relative;
+      .title {
+        z-index: 1;
+        font-family: globalVars.$serif;
+        font-size: 4rem;
+        font-weight: normal;
+        text-shadow: 0.5px 0.5px 2px globalVars.$black;
+      }
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      height: 40%;
+      .contentHeader {
+        background: url("../../public/images/tổ.png");
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 30%;
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        .swiper {
+          display: flex;
+          width: 60%;
+          margin: 0;
+          margin-bottom: 4rem;
+          height: 4rem;
+
+          .slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.4rem;
+
+            span {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+
+      .contentBody {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        height: 40%;
+        background: url("../../public/images/HÌNH\ TỪNG\ THẦY\ CÔ.png");
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 10rem;
+        .teacherSwiper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 94rem;
+          .teacherSlide {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(10rem, 1fr));
+            align-items: center;
+            justify-items: center;
+            grid-auto-rows: 32rem;
+            gap: 6rem;
+            overflow: auto;
+          }
         }
       }
     }
@@ -185,21 +516,23 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+        margin-bottom: 10rem;
         .teacherSwiper {
           display: flex;
           justify-content: center;
           align-items: center;
           width: 100%;
-          height: 90rem;
+          height: 94rem;
           .teacherSlide {
             width: 100%;
-            height: auto !important;
+            height: 100%;
             display: grid;
             grid-template-columns: repeat(3, minmax(10rem, 1fr));
             align-items: center;
             justify-items: center;
             grid-auto-rows: 32rem;
             gap: 8rem;
+            overflow: auto;
           }
         }
       }
