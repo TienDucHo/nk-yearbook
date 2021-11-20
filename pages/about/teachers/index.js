@@ -1,6 +1,8 @@
 // Source
 import { server } from "@config/index";
 
+const tempServer = "https://nk-yearbook.herokuapp.com";
+
 // Components
 import Image from "next/image";
 import TeacherCard from "@components/TeacherCard";
@@ -44,7 +46,25 @@ const Teachers = ({ subjects }) => {
       return x < y ? -1 : x > y ? 1 : 0;
     });
   };
+
+  const sort_by_firstName = (array, key = "name") => {
+    return [].slice.call(array).sort(function (a, b) {
+      var x = a[key].trim().split(" ").at(-1);
+      var y = b[key].trim().split(" ").at(-1);
+      return Intl.Collator("vi").compare(x, y);
+    });
+  };
+
   subjects = sort_by_key(subjects, "id");
+
+  for (let i = 0; i < subjects.length; ++i) {
+    subjects[i]["teachers"] = sort_by_firstName(
+      subjects[i]["teachers"]
+    );
+  }
+
+  console.log(Intl.Collator("vi").compare("Hùng", "Hải"));
+
   return (
     <div className={teachersStyle.container}>
       <div className={teachersStyle.hero}>
