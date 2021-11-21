@@ -164,7 +164,7 @@ const Teachers = ({ subjects }) => {
 };
 
 export const getServerSideProps = async () => {
-  const res = await fetch(`${server}/subjects`);
+  const res = await fetch(`${tempServer}/subjects`);
   const subjects = await res.json();
   return {
     props: {

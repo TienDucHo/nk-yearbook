@@ -70,7 +70,7 @@ const Teacher = ({ teacher }) => {
     console.log(newPost);
     let newList = [...postList, newPost];
     updatePostList(newList);
-    const add = await fetch(`${server}/posts`, {
+    const add = await fetch(`${tempServer}/posts`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -175,7 +175,7 @@ const Teacher = ({ teacher }) => {
 
 export const getServerSideProps = async (context) => {
   const res = await fetch(
-    `${server}/teachers?slug=${context.params.slug}`
+    `${tempServer}/teachers?slug=${context.params.slug}`
   );
   const teacher = await res.json();
   return {
