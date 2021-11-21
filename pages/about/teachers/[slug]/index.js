@@ -90,7 +90,7 @@ const Teacher = ({ teacher }) => {
               src={teacher[0]["portrait"]["url"]}
               alt={teacher[0]["prefix"] + " " + teacher[0]["name"]}
               layout="fill"
-              objectFit="contain"
+              objectFit="cover"
               objectPosition="center"
               className={teacherStyle.image}
             ></Image>

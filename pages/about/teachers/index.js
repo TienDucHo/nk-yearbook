@@ -1,6 +1,8 @@
 // Source
 import { server } from "@config/index";
 
+import * as Scroll from "react-scroll";
+
 const tempServer = "https://nk-yearbook.herokuapp.com";
 
 // Components
@@ -61,6 +63,12 @@ const Teachers = ({ subjects }) => {
     subjects[i]["teachers"] = sort_by_firstName(
       subjects[i]["teachers"]
     );
+  }
+
+  const teacherSlide = [];
+
+  for (let i = 0; i < subjects.length; ++i) {
+    teacherSlide.push();
   }
 
   return (
@@ -138,11 +146,15 @@ const Teachers = ({ subjects }) => {
             }}
             mousewheel={true}
             className={teachersStyle.teacherSwiper}
+            observer={true}
+            observeParents={true}
           >
             <SwiperSlide className={teachersStyle.teacherSlide}>
-              {subjects[subject]["teachers"].map((item, index) => (
-                <TeacherCard key={index} data={item} />
-              ))}
+              <div className={teachersStyle.teachersContainer}>
+                {subjects[subject]["teachers"].map((item, index) => (
+                  <TeacherCard key={index} data={item} />
+                ))}
+              </div>
             </SwiperSlide>
           </Swiper>
         </div>

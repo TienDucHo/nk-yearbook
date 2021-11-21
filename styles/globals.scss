@@ -11,6 +11,7 @@ body {
   font-family: "Inter", sans-serif;
   color: globalVars.$black;
   font-size: 6px;
+  scroll-behavior: smooth;
   .swiper-button-prev {
     &::after {
       content: "";
