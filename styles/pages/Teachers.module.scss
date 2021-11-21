@@ -68,10 +68,10 @@
         background-repeat: no-repeat;
         background-position: center;
         .teacherSlide {
-          overflow: auto;
           display: flex;
           flex-direction: column;
           .teachersContainer {
+            overflow-y: scroll;
             display: flex;
             flex-direction: column;
             justify-content: center;
