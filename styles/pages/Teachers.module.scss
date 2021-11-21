@@ -68,13 +68,15 @@
         background-repeat: no-repeat;
         background-position: center;
         .teacherSlide {
+          overflow: auto;
+          display: flex;
+          flex-direction: column;
           .teachersContainer {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             row-gap: 4rem;
-            height: auto;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
           }
