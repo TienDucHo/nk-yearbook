@@ -103,7 +103,11 @@ const Teacher = ({ teacher }) => {
             <Controller
               name="content"
               control={control}
-              rules={{ required: true }}
+              rules={{
+                required: true,
+                minLength: 10,
+                maxLength: 400,
+              }}
               render={({ field }) => (
                 <TextareaAutosize
                   placeholder="LỜI YÊU THƯƠNG"
@@ -116,8 +120,6 @@ const Teacher = ({ teacher }) => {
               control={control}
               rules={{
                 required: true,
-                minLength: 11,
-                maxLength: 400,
               }}
               render={({ field }) => (
                 <TextareaAutosize
