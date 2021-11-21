@@ -50,11 +50,17 @@ const Teachers = ({ subjects }) => {
   };
 
   const sort_by_firstName = (array, key = "name") => {
-    return [].slice.call(array).sort(function (a, b) {
-      var x = a[key].trim().split(" ").at(-1);
-      var y = b[key].trim().split(" ").at(-1);
-      return Intl.Collator("vi").compare(x, y);
-    });
+    if (array != [])
+      return [].slice.call(array).sort(function (a, b) {
+        if (a && b) {
+          let nameA = a[key].trim().split(" ");
+          let nameB = b[key].trim().split(" ");
+          return Intl.Collator("vi").compare(
+            nameA[nameA.length - 1],
+            nameB[nameB.length - 1]
+          );
+        }
+      });
   };
 
   subjects = sort_by_key(subjects, "id");
@@ -70,6 +76,14 @@ const Teachers = ({ subjects }) => {
   for (let i = 0; i < subjects.length; ++i) {
     teacherSlide.push();
   }
+
+  const params = {
+    spaceBetween: 5,
+    slidesPerView: "auto",
+    direction: "vertical",
+    rebuildOnUpdate: true,
+    renderScrollbar: true,
+  };
 
   return (
     <div className={teachersStyle.container}>
@@ -147,7 +161,9 @@ const Teachers = ({ subjects }) => {
             mousewheel={true}
             className={teachersStyle.teacherSwiper}
             observer={true}
+            resizeObserver={true}
             observeParents={true}
+            updateOnImagesReady={true}
           >
             <SwiperSlide className={teachersStyle.teacherSlide}>
               <div className={teachersStyle.teachersContainer}>
