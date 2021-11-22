@@ -1,9 +1,6 @@
-// Source
-import { server } from "@config/index";
+//Source
 
-import * as Scroll from "react-scroll";
-
-const tempServer = "https://nk-yearbook.herokuapp.com";
+const server = "https://nk-yearbook.herokuapp.com";
 
 // Components
 import Image from "next/image";
@@ -37,33 +34,70 @@ SwiperCore.use([
 ]);
 
 // Hooks
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const sort_by_key = (array, key) => {
+  return [].slice.call(array).sort(function (a, b) {
+    var x = a[key];
+    var y = b[key];
+    return x < y ? -1 : x > y ? 1 : 0;
+  });
+};
+
+const sort_by_firstName = (array, key = "name") => {
+  if (array != [])
+    return [].slice.call(array).sort(function (a, b) {
+      if (a && b) {
+        let nameA = a[key].trim().split(" ");
+        let nameB = b[key].trim().split(" ");
+        return Intl.Collator("vi").compare(
+          nameA[nameA.length - 1],
+          nameB[nameB.length - 1]
+        );
+      }
+    });
+};
+
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      handleResize();
+
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+  return windowSize;
+};
+
+function partition(array, size, offset) {
+  offset |= 0;
+  var result = [];
+  while (offset < array.length) {
+    result.push(array.slice(offset, (offset += size)));
+  }
+  return result;
+}
 
 const Teachers = ({ subjects }) => {
   const [subject, setSubject] = useState(0);
-  const sort_by_key = (array, key) => {
-    return [].slice.call(array).sort(function (a, b) {
-      var x = a[key];
-      var y = b[key];
-      return x < y ? -1 : x > y ? 1 : 0;
-    });
-  };
-
-  const sort_by_firstName = (array, key = "name") => {
-    if (array != [])
-      return [].slice.call(array).sort(function (a, b) {
-        if (a && b) {
-          let nameA = a[key].trim().split(" ");
-          let nameB = b[key].trim().split(" ");
-          return Intl.Collator("vi").compare(
-            nameA[nameA.length - 1],
-            nameB[nameB.length - 1]
-          );
-        }
-      });
-  };
 
   subjects = sort_by_key(subjects, "id");
+
+  const size = useWindowSize();
 
   for (let i = 0; i < subjects.length; ++i) {
     subjects[i]["teachers"] = sort_by_firstName(
@@ -71,19 +105,54 @@ const Teachers = ({ subjects }) => {
     );
   }
 
-  const teacherSlide = [];
+  let teachers = subjects[subject]["teachers"];
+  let slides = [];
+  slides = partition(teachers, size.width > 1100 ? 3 : 1).map(
+    (items, index) => (
+      <SwiperSlide className={teachersStyle.teacherSlide} key={index}>
+        <div className={teachersStyle.teachersContainer}>
+          {items.map((teacher, teacherID) => (
+            <TeacherCard key={teacherID} data={teacher} />
+          ))}
+        </div>
+      </SwiperSlide>
+    )
+  );
 
-  for (let i = 0; i < subjects.length; ++i) {
-    teacherSlide.push();
-  }
-
-  const params = {
-    spaceBetween: 5,
-    slidesPerView: "auto",
-    direction: "vertical",
-    rebuildOnUpdate: true,
-    renderScrollbar: true,
-  };
+  // if (size.width >= 1100) {
+  //   let teachers = subjects[subject]["teachers"];
+  //   for (let i = 0; i < teachers.length; ++i) {
+  //     const teacher = teachers[i];
+  //     if (i % 3 == 0 || i + 1 == teachers.length) {
+  //       if (i + 1 == teachers.length)
+  //         items.push(<TeacherCard data={teacher} key={i} />);
+  //       if (items.length > 0)
+  //         slides.push(
+  //           <SwiperSlide
+  //             className={teachersStyle.teacherSlide}
+  //             key={i}
+  //           >
+  //             <div className={teachersStyle.teachersContainer}>
+  //               {items}
+  //             </div>
+  //           </SwiperSlide>
+  //         );
+  //       items = [];
+  //     }
+  //     items.push(<TeacherCard data={teacher} key={i} />);
+  //   }
+  // } else {
+  //   for (let i = 0; i < subjects[subject]["teachers"].length; ++i) {
+  //     const teacher = subjects[subject]["teachers"][i];
+  //     slides.push(
+  //       <SwiperSlide key={i}>
+  //         <div className={teachersStyle.teachersContainer}>
+  //           <TeacherCard key={i} data={teacher} />
+  //         </div>
+  //       </SwiperSlide>
+  //     );
+  //   }
+  // }
 
   return (
     <div className={teachersStyle.container}>
@@ -165,16 +234,7 @@ const Teachers = ({ subjects }) => {
             observeParents={true}
             updateOnImagesReady={true}
           >
-            {subjects[subject]["teachers"].map((item, index) => (
-              <SwiperSlide
-                key={index}
-                className={teachersStyle.teacherSlide}
-              >
-                <div className={teachersStyle.teachersContainer}>
-                  <TeacherCard key={index} data={item} />
-                </div>
-              </SwiperSlide>
-            ))}
+            {slides}
           </Swiper>
         </div>
       </div>
@@ -183,7 +243,7 @@ const Teachers = ({ subjects }) => {
 };
 
 export const getServerSideProps = async () => {
-  const res = await fetch(`${tempServer}/subjects`);
+  const res = await fetch(`${server}/subjects`);
   const subjects = await res.json();
   return {
     props: {

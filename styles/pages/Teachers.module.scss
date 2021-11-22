@@ -5,7 +5,8 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 80%;
+  margin: 0;
   .hero {
     position: relative;
     width: 80%;
@@ -22,10 +23,10 @@
   }
   .content {
     width: 100%;
-    height: 150vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     .contentHeader {
       display: flex;
@@ -60,7 +61,7 @@
 
     .contentBody {
       width: 70%;
-      height: 76%;
+      height: 48%;
       .teacherSwiper {
         height: 100%;
         background: url("../../public/images/HÌNH\ TỪNG\ THẦY\ CÔ.png");
@@ -68,14 +69,17 @@
         background-repeat: no-repeat;
         background-position: center;
         .teacherSlide {
-          height: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
           .teachersContainer {
             display: flex;
             height: auto;
-            flex-direction: column;
+            width: 100%;
             justify-content: center;
             align-items: center;
-            row-gap: 1rem;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
           }
