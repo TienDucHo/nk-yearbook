@@ -92,8 +92,10 @@
 @media (min-width: globalVars.$breakpoint-pc) {
   .container {
     .content {
+      height: 150vh;
       .contentBody {
         width: 80%;
+        height: 80%;
         .teacherSwiper {
           .teacherSlide {
             .teachersContainer {
