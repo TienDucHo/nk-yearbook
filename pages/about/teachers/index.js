@@ -165,13 +165,16 @@ const Teachers = ({ subjects }) => {
             observeParents={true}
             updateOnImagesReady={true}
           >
-            <SwiperSlide className={teachersStyle.teacherSlide}>
-              <div className={teachersStyle.teachersContainer}>
-                {subjects[subject]["teachers"].map((item, index) => (
+            {subjects[subject]["teachers"].map((item, index) => (
+              <SwiperSlide
+                key={index}
+                className={teachersStyle.teacherSlide}
+              >
+                <div className={teachersStyle.teachersContainer}>
                   <TeacherCard key={index} data={item} />
-                ))}
-              </div>
-            </SwiperSlide>
+                </div>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>
