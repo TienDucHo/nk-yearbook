@@ -1,19 +1,16 @@
 // Libraries
-import Link from "next/link";
-import Image from "next/image";
-import { useContext } from "react";
-import {
-  globalStateContext,
-  dispatchStateContext,
-} from "../pages/_app";
+import Link from 'next/link';
+import Image from 'next/image';
+import { useContext } from 'react';
+import { globalStateContext, dispatchStateContext } from '../pages/_app';
 
 //Components
-import DropdownMenu from "./DropdownMenu";
+import DropdownMenu from './DropdownMenu';
 
 // Styling
-import navStyles from "@styles/components/Navigation.module.scss";
+import navStyles from '@styles/components/Navigation.module.scss';
 
-let links = require("@libs/links_temp.json");
+let links = require('@libs/links_temp.json');
 
 const useGlobalState = () => [
   useContext(globalStateContext),
@@ -57,17 +54,15 @@ const Navigation = ({}) => {
                 dispatch({ nav: navArray });
               }}
             >
-              <Link href={links[key]["main"]["link"]}>
-                <a className={navStyles.links}>
-                  {links[key]["main"]["title"]}
-                </a>
+              <Link href={links[key]['main']['link']}>
+                <a className={navStyles.links}>{links[key]['main']['title']}</a>
               </Link>
               {state.nav[index] ? (
                 <DropdownMenu
                   key={index}
                   index={index}
-                  listOfLinks={links[key]["links"]}
-                  className={links[key]["links"].length > 0}
+                  listOfLinks={links[key]['links']}
+                  className={links[key]['links'].length > 0}
                 ></DropdownMenu>
               ) : null}
             </li>

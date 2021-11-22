@@ -95,14 +95,16 @@ const Teacher = ({ teacher }) => {
   return (
     <>
       <br />
-      <FacebookShareButton url={pageURL}>
-        <Image
-          src={facebookShareButton}
-          alt="facebook share button"
-          height={20}
-          width={70}
-        />
-      </FacebookShareButton>
+      <div className={teacherStyle.shareButton}>
+        <FacebookShareButton url={pageURL}>
+          <Image
+            src={facebookShareButton}
+            alt="facebook share button"
+            height={25}
+            width={75}
+          />
+        </FacebookShareButton>
+      </div>
       <div className={teacherStyle.container}>
         <div className={teacherStyle.content}>
           <div className={teacherStyle.headers}>
@@ -151,6 +153,7 @@ const Teacher = ({ teacher }) => {
                   render={({ field }) => (
                     <Select
                       {...field}
+                      instanceId="classes"
                       options={classes}
                       styles={customDropdownStyles}
                       placeholder="LỚP"
@@ -164,6 +167,7 @@ const Teacher = ({ teacher }) => {
                   render={({ field }) => (
                     <Select
                       {...field}
+                      instanceId="yearOptions"
                       options={yearOptions}
                       styles={customDropdownStyles}
                       placeholder="KHÓA"
