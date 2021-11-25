@@ -1,4 +1,4 @@
-@use '../variables.scss' as globalVars;
+@use "../variables.scss" as globalVars;
 .shareButton {
   margin-left: 75%;
 }
@@ -10,11 +10,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   .content {
     margin-top: 2rem;
     width: 80%;
-    background: url('../../public/images/HÌNH\ TỪNG\ THẦY\ CÔ.png');
+    background: url("../../public/images/HÌNH\ TỪNG\ THẦY\ CÔ.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -45,7 +45,7 @@
         justify-content: center;
         align-items: center;
         textarea,
-        input[type='text'] {
+        input[type="text"] {
           margin: 2rem 0;
           width: 100%;
           font-size: 1.2rem;
@@ -105,10 +105,10 @@
     // margin-top: 10rem;
     gap: 4rem;
     width: 100%;
-    background: url('../../public/images/HÌNH\ TỪNG\ THẦY\ CÔ.png');
+    background: url("../../public/images/HÌNH\ TỪNG\ THẦY\ CÔ.png");
     background-position: center;
     background-repeat: no-repeat;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     .subject {
       align-self: flex-start;
       font-weight: normal;
@@ -141,18 +141,18 @@
         .form {
           width: 40%;
           max-width: 40rem;
-          height: 80%;
+          height: 100%;
           display: flex;
           flex-direction: column;
-          gap: 2rem;
+          gap: 1rem;
           textarea,
-          input[type='text'] {
+          input[type="text"] {
             box-sizing: border-box;
             border: none;
             background-color: rgba($color: #000000, $alpha: 0);
             border-bottom: 2px solid globalVars.$black;
             font-size: 1rem;
-            font-family: 'Inter', sans-serif;
+            font-family: "Inter", sans-serif;
             &::placeholder {
               font-size: 1rem;
               padding: 0;
