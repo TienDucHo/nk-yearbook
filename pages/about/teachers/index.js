@@ -1,5 +1,4 @@
 //Source
-
 const server = "https://nk-yearbook.herokuapp.com";
 
 // Components
@@ -118,41 +117,6 @@ const Teachers = ({ subjects }) => {
       </SwiperSlide>
     )
   );
-
-  // if (size.width >= 1100) {
-  //   let teachers = subjects[subject]["teachers"];
-  //   for (let i = 0; i < teachers.length; ++i) {
-  //     const teacher = teachers[i];
-  //     if (i % 3 == 0 || i + 1 == teachers.length) {
-  //       if (i + 1 == teachers.length)
-  //         items.push(<TeacherCard data={teacher} key={i} />);
-  //       if (items.length > 0)
-  //         slides.push(
-  //           <SwiperSlide
-  //             className={teachersStyle.teacherSlide}
-  //             key={i}
-  //           >
-  //             <div className={teachersStyle.teachersContainer}>
-  //               {items}
-  //             </div>
-  //           </SwiperSlide>
-  //         );
-  //       items = [];
-  //     }
-  //     items.push(<TeacherCard data={teacher} key={i} />);
-  //   }
-  // } else {
-  //   for (let i = 0; i < subjects[subject]["teachers"].length; ++i) {
-  //     const teacher = subjects[subject]["teachers"][i];
-  //     slides.push(
-  //       <SwiperSlide key={i}>
-  //         <div className={teachersStyle.teachersContainer}>
-  //           <TeacherCard key={i} data={teacher} />
-  //         </div>
-  //       </SwiperSlide>
-  //     );
-  //   }
-  // }
 
   return (
     <div className={teachersStyle.container}>
